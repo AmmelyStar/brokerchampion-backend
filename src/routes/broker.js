@@ -4,7 +4,7 @@ const {getBroker} = require('../controllers/brokerControllers')
 
 const brokerRouter = express.Router();
 
-brokerRouter.get("/broker",  getBroker);
+brokerRouter.get("/",  getBroker);
 
 
 module.exports = brokerRouter;
