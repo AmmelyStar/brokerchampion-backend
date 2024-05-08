@@ -59,5 +59,5 @@ const brokerSchema = new mongoose.Schema({
 });
 
 
-
-module.exports = mongoose.model('Broker', brokerSchema);
+const Broker = mongoose.model('broker', brokerSchema)
+module.exports = Broker;

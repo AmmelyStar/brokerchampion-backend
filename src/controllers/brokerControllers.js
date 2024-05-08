@@ -1,15 +1,15 @@
-const Broker = require('../models/broker.js');
+const Broker = require('../models/broker');
 
-const getBroker = (req, res) => {
-  Broker.find({})
-    .then(brokers => {
-      res.json(brokers);
-      console.log(brokers);
-    })
-    .catch(err => {
-      console.error(err);
-      res.status(500).json({ error: 'Failed to fetch brokers' });
-    });
+const getBroker = async (req, res) => {
+  try {
+    const brokers = await Broker.find({});
+     console.log("345345", brokers);
+    res.json(brokers);
+   
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to fetch brokers' });
+  }
 };
 
 module.exports = {
